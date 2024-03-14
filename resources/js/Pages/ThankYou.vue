@@ -14,8 +14,8 @@ import { Head } from "@inertiajs/vue3";
                 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight"
             >
                 Hey! Thank you for taking the survey!
-            </h2>
-        
+            </h2>        
         </template>
+        
     </AuthenticatedLayout>
 </template>

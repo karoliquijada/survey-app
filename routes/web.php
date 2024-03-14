@@ -20,10 +20,12 @@ use Inertia\Inertia;
 |
 */
 
-Route::get('/', function () {
-    return Inertia::render('Auth/Login', [
-        'canRegister' => Route::has('register'),
-    ]);
+Route::middleware('guest')->group(function () {
+    Route::get('/', function () {
+        return Inertia::render('Auth/Login', [
+            'canRegister' => Route::has('register'),
+        ]);
+    });
 });
 
 Route::middleware('auth')->group(function () {
