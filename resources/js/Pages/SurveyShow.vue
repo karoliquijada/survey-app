@@ -8,12 +8,10 @@ const props = defineProps({
     survey: Object,
 });
 
-
 const currentPage = ref(1);
 
-// Función para cambiar de página
 const goToPage = (page) => {
-  currentPage.value = page;
+    currentPage.value = page;
 };
 
 const form = useForm({
@@ -62,33 +60,7 @@ const submit = () => {
                         <form @submit.prevent="submit">
                             <!-- Questions -->
 
-                            <!-- FUNCIONA!! 
-                            <div
-                                v-for="(question, index) in props.survey
-                                    .questions"
-                                :key="question.id"
-                                class="mb-2"
-                            >
-                                <span class="text-gray-200">{{ question.text }}</span> 
-                                <div class="mt-2">
-                                    <label
-                                        class="ml-2"
-                                        v-for="value in [1, 2, 3, 4, 5]"
-                                        :key="value"
-                                    >
-                                        <input
-                                            :name="'question_' + index"
-                                            type="radio"
-                                            :value="value"
-                                            v-model="form.answers[question.id]"
-                                        />
-                                        {{ value }}
-                                    </label>
-                                </div>
-                            </div>
- -->
-
-                            <!-- Primera página -->
+                            <!-- Survey first page -->
                             <div v-if="currentPage === 1">
                                 <div
                                     v-for="(
@@ -102,7 +74,7 @@ const submit = () => {
                                     }}</span>
                                     <div class="mt-2">
                                         <label
-                                            class="ml-2"
+                                            class="ml-2 text-gray-500"
                                             v-for="value in [1, 2, 3, 4, 5]"
                                             :key="value"
                                         >
@@ -118,10 +90,14 @@ const submit = () => {
                                         </label>
                                     </div>
                                 </div>
-                                <button @click="currentPage++">Next</button>
+                                <div class="pt-3">
+                                    <PrimaryButton @click="currentPage++"
+                                        >Next</PrimaryButton
+                                    >
+                                </div>
                             </div>
 
-                            <!-- Segunda página -->
+                            <!-- Survey second page -->
                             <div v-else-if="currentPage === 2">
                                 <div
                                     v-for="(
@@ -135,7 +111,7 @@ const submit = () => {
                                     }}</span>
                                     <div class="mt-2">
                                         <label
-                                            class="ml-2"
+                                            class="ml-2 text-gray-500"
                                             v-for="value in [1, 2, 3, 4, 5]"
                                             :key="value"
                                         >
@@ -151,20 +127,22 @@ const submit = () => {
                                         </label>
                                     </div>
                                 </div>
-                                <button @click="currentPage--">Previous</button>
-                                <button @click="submitForm">Submit</button>
+                                <div class="pt-3">
+                                    <PrimaryButton @click="currentPage--"
+                                    >Previous</PrimaryButton
+                                >
+                                <!-- Subtmit button -->
+                                <PrimaryButton
+                                    class="ml-4"
+                                    :class="{ 'opacity-25': form.processing }"
+                                    :disabled="form.processing"
+                                >
+                                    Submit
+                                </PrimaryButton>
+
+                                </div>
+                               
                             </div>
-
-                            <!-- Back and forth button -->
-
-                            <!-- Subtmit button -->
-                            <PrimaryButton
-                                class="ml-4"
-                                :class="{ 'opacity-25': form.processing }"
-                                :disabled="form.processing"
-                            >
-                                Submit
-                            </PrimaryButton>
                         </form>
                     </div>
                 </div>

@@ -35,6 +35,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/survey/{id}', [SurveyController::class, 'show'])->name('survey.show');
     Route::post('/submit-answers/{survey_id}', [AnswerController::class, 'store'])->name('submit-answers');
     
+    Route::get('/thankyou', function () {
+        return Inertia::render('ThankYou');
+    })->name('thankyou');
+    
     Route::get('/statistics', [StatisticsController::class, 'index'])->name('statistics');
 
     //Admin routes

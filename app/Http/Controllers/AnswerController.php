@@ -32,8 +32,6 @@ class AnswerController extends Controller
             'completed_at' => now(),
         ]);
     
-
-        return response()->json(['message' => 'Respuestas guardadas con éxito'], 201);
-        /* return redirect()->route('thankyou'); */
+        return redirect()->route('thankyou');
     }
 }
