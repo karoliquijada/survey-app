@@ -34,19 +34,13 @@ Node.js >= 14.x
   composer install
 ```
 
-3. Install Node.js dependencies: 
-
-```bash
-  npm install 
-```
-
-4. Copy the .env.example file to .env and configure the necessary environment variables, such as the database connection.
+3. Copy the .env.example file to .env and configure the necessary environment variables, such as the database connection.
 
 ```bash
   cp .env.example .env
 ```
 
-5. Start the Laravel Sail environment:
+4. Start the Laravel Sail environment:
 
 ```bash
 ./vendor/bin/sail up
@@ -56,6 +50,11 @@ You can add an alias for sail commands:
 
 ```bash
 alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
+```
+
+5. Generate a new application key
+```bash
+sail artisan key:generate
 ```
 
 6. Run database migrations: 
@@ -70,13 +69,19 @@ sail artisan migrate
 sail artisan db:seed
 ```
 
-8. Start the project: 
+8. Install Node.js dependencies: 
+
+```bash
+  sail npm install 
+```
+
+9. Start the project: 
 
 ```bash
 sail npm run dev
 ```
 
-9. Access the application in your browser: http://localhost
+10. Access the application in your browser: http://localhost
 
 Check out the seeders if you want to see all the credentials.
 
