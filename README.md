@@ -70,6 +70,12 @@ sail artisan migrate
 sail artisan db:seed
 ```
 
+7. Start the project: 
+
+```bash
+npm run dev
+```
+
 8. Access the application in your browser: http://localhost
 
 Check out the seeders if you want to see all the credentials.
@@ -84,20 +90,13 @@ Password: password
 
 I did not seed the answers, so have fun completing the survey!
 
-
-
-
-
-
-
-
-
     
 ## Aditional notes
 
 Ensure Docker Desktop is installed and properly configured to run Laravel Sail.
 For development, use Docker Desktop's containers to replicate the production environment locally.
 Laravel Sail simplifies local development by providing a Docker-powered local development environment for Laravel projects.
+
 ## Reference
 
 Laravel Documentation: https://laravel.com/docs
