@@ -70,13 +70,13 @@ sail artisan migrate
 sail artisan db:seed
 ```
 
-7. Start the project: 
+8. Start the project: 
 
 ```bash
-npm run dev
+sail npm run dev
 ```
 
-8. Access the application in your browser: http://localhost
+9. Access the application in your browser: http://localhost
 
 Check out the seeders if you want to see all the credentials.
 
@@ -99,8 +99,8 @@ Laravel Sail simplifies local development by providing a Docker-powered local de
 
 ## Reference
 
-Laravel Documentation: https://laravel.com/docs
-Vue.js Documentation: https://v3.vuejs.org/guide/introduction.html
+Laravel Documentation: https://laravel.com/docs/9.x/installation
+Vue.js Documentation: https://vuejs.org/guide/introduction.html
 Inertia.js Documentation: https://inertiajs.com/
 Spatie Laravel Permission Documentation: https://spatie.be/docs/laravel-permission/v5/introduction
 Laravel Sail Documentation: https://laravel.com/docs/9.x/sail
